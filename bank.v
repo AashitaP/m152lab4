@@ -37,7 +37,11 @@ begin
 	end
     else if(randNum1 == randNum2 && randNum2 == randNum3 && randNum3 == randNum4 && rst == 0)
     begin
-        if(b1)
+        if(balance + (2*deduction) >= 1000)
+            balanceR <= 1000;
+        else
+            balanceR <= balanceR + (2*deduction);
+      /*  if(b1)
         begin
             if(balanceR + 1 >= 1000)
                 balanceR <= 1000;
@@ -64,8 +68,36 @@ begin
                 balanceR <= 1000;
             else
                 balanceR <= balanceR + 100;
-        end
+        end */
     end
+   /* else if(randNum1 == randNum2 && randNum2 == randNum3 && rst == 0) //123
+    begin
+        if(balance + deduction >= 1000)
+            balanceR <= 1000;
+        else
+            balanceR <= balanceR + deduction;
+    end
+    else if(randNum2 == randNum3 && randNum3 == randNum4 && rst == 0) //234
+    begin
+        if(balance + deduction >= 1000)
+            balanceR <= 1000;
+        else
+            balanceR <= balanceR + deduction;
+    end
+    else if(randNum1 == randNum2 && randNum2 == randNum4 && rst == 0) //124
+    begin
+        if(balance + deduction >= 1000)
+            balanceR <= 1000;
+        else
+            balanceR <= balanceR + deduction;
+    end
+    else if(randNum1 == randNum3 && randNum3 == randNum4 && rst == 0) //134
+    begin
+        if(balance + deduction >= 1000)
+            balanceR <= 1000;
+        else
+            balanceR <= balanceR + deduction;
+    end */
 	else if(rst == 0)
 	begin
         if(balanceR - deduction <= 0)

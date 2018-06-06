@@ -70,6 +70,14 @@ wire dclk;
 
 wire slotclk;
 
+/*	 wire reset_wire;
+	 wire pause_wire;
+	 wire pause_on;
+	 wire pause_off;
+	 wire reset_on;
+	 wire reset_off;
+	 */
+
 // disable the 7-segment decimal points
 assign dp = 1;
 
@@ -123,7 +131,32 @@ debouncer debouncer(
     .pause(pause),
     .rst(rst)
     );
-    
+/*debouncer btnR(
+	.clk(clk),
+	.btn(btnR),
+	.btnState(reset_wire)
+)
+
+debouncer btnP(
+	.clk(clk),
+	.btn(btnP),
+	.btnState(pause_wire)
+)
+
+detect_edge pause(
+        .async_sig(pause_wire),
+        .clk(clk),
+        .rise(pause_on),
+        .fall(pause_off)
+        );
+	 
+detect_edge reset(
+        .async_sig(reset_wire),
+        .clk(clk),
+        .rise(reset_on),
+        .fall(reset_off)
+        );
+*/
 display display(
     .clk(segclk), 
     .num1(num1), 

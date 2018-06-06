@@ -50,3 +50,34 @@ always @ (posedge clk or posedge arst_i) begin
 end
 
 endmodule
+
+/*module debouncer(
+    input clk,
+    input btn,
+    output btnState
+    );
+
+		reg button_reg = 0;
+		reg [15:0] count;
+
+		always @ (posedge clk)
+		begin
+			if(btn > 0 || btn < 0)
+			begin
+				count <= count +1;
+				if(count == 16'b1111111111111111)
+				begin
+					button_reg <= 1;
+					count <= 0;
+				end
+			end
+			else
+			begin
+				count <= 0;
+				button_reg <= 0;
+			end
+		end
+
+		assign btnState = button_reg;
+
+endmodule */
