@@ -11,7 +11,7 @@ input [3:0] randNum3;
 input [3:0] randNum4;
 input rst;
 output reg[26:0] balance;
-reg[26:0] balanceR;
+reg[26:0] balanceR = 100;
 reg[26:0] deduction;
 
 always @(posedge clk)
