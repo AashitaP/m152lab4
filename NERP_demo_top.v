@@ -146,7 +146,7 @@ randomGenTop randomGenTop(
 
 
 bank bank(
-	.clk(clk), 
+	.clk(slotclk), 
 	.b1(b1), 
 	.b10(b10), 
 	.b50(b50), 
