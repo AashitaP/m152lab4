@@ -88,6 +88,40 @@ reg ones;
 
 always @(posedge dclk)
 begin
+	//have it start with 100
+	/*
+			sign04 = 0; //0
+			sign01 = 1;
+			sign02 = 1;
+			sign03 = 1;
+			sign05 = 1;
+			sign06 = 1;
+			sign07 = 1;
+
+			sign11 = 0;
+			sign12 = 0;
+			sign13 = 1;
+			sign14 = 0;
+			sign15 = 0;
+			sign16 = 1;
+			sign17 = 0;
+
+			sign24 = 0; //0
+			sign21 = 1;
+			sign22 = 1;
+			sign23 = 1;
+			sign25 = 1;
+			sign26 = 1;
+			sign27 = 1;						
+
+			sign34 = 0; //0
+			sign31 = 1;
+			sign32 = 1;
+			sign33 = 1;
+			sign35 = 1;
+			sign36 = 1;
+			sign37 = 1;
+			*/
 	thousands <= (balance / 1000);
 	hundreds <= (balance % 1000) / 100;
 	tens <= (balance % 1000 % 100) / 10;
@@ -782,7 +816,7 @@ begin
 		end							
 
 		//////////////////////////////////////
-		////////tens digit///////////////////
+		////////tens digit////////////////////
 		//////////////////////////////////////
 
 		// display cyan bar
@@ -888,90 +922,8 @@ begin
 			green = 3'b111;
 			blue = 2'b00;
 		end          
-        
-        /////////////////////////////////////
-        ////////ones digit//////////////////
-        /////////////////////////////////////
-		// display magenta bar
-        //top middle
-		else if (hc >= (hbp+320) && hc < (hbp+400) && vc >= (vbp+255) && vc < (vbp+260)&& (sign41 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end
-        //top left
-		else if (hc >= (hbp+320) && hc < (hbp+325) && vc >= (vbp+260) && vc < (vbp+335) && (sign42 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end
-        //top right
- 		else if (hc >= (hbp+395) && hc < (hbp+400) && vc >= (vbp+260) && vc < (vbp+335) && (sign43 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end       
-        // middle
-		else if (hc >= (hbp+320) && hc < (hbp+400) && vc >= (vbp+335) && vc < (vbp+340) && (sign44 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end
-        //bottom left
- 		else if (hc >= (hbp+320) && hc < (hbp+325) && vc >= (vbp+340) && vc < (vbp+415) && (sign45 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end    
-        //bottom right
-  		else if (hc >= (hbp+395) && hc < (hbp+400) && vc >= (vbp+340) && vc < (vbp+415) && (sign46 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end          
-        //bottom middle
-		else if (hc >= (hbp+320) && hc < (hbp+400) && vc >= (vbp+415) && vc < (vbp+420) && (sign47 > 0) )
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b11;
-		end   
-/*        
-		// display red bar
-		else if (hc >= (hbp+400) && hc < (hbp+480))
-		begin
-			red = 3'b111;
-			green = 3'b000;
-			blue = 2'b00;
-		end
-		// display blue bar
-		else if (hc >= (hbp+480) && hc < (hbp+560))
-		begin
-			red = 3'b000;
-			green = 3'b000;
-			blue = 2'b11;
-		end
-		// display black bar
-		else if (hc >= (hbp+560) && hc < (hbp+640))
-		begin
-			red = 3'b000;
-			green = 3'b000;
-			blue = 2'b00;
-		end
-		// we're outside active horizontal range so display black
-		else
-		begin
-			red = 0;
-			green = 0;
-			blue = 0;
-		end
-        */
+           
+
 	end
 	// we're outside active vertical range so display black
 	else
