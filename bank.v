@@ -35,4 +35,48 @@ begin
 	begin
         balanceR <= 100;
 	end
-    else if(randNum1 == randNum2 && randNum2 == randNum3 && randNum3 == randNum4)
+    else if(randNum1 == randNum2 && randNum2 == randNum3 && randNum3 == randNum4 && rst == 0)
+    begin
+        if(b1)
+        begin
+            if(balanceR + 1 >= 1000)
+                balanceR <= 1000;
+            else 
+                balanceR <= balanceR + 1;
+        end
+        else if(b10)
+        begin
+            if(balanceR + 10 >= 1000)
+                balanceR <= 1000;
+            else
+                balanceR <= balanceR + 10;
+        end
+        else if(b50)
+        begin
+            if(balanceR + 50 >= 1000)
+                balanceR <= 1000;
+            else
+                balanceR <= balanceR + 50;
+        end
+        else if(b100)
+        begin
+            if(balanceR + 100 >= 1000)
+                balanceR <= 1000;
+            else
+                balanceR <= balanceR + 100;
+        end
+    end
+	else if(rst == 0)
+	begin
+        if(balanceR - deduction <= 0)
+            balanceR <= 0;
+		else
+            balanceR <= balanceR - deduction;
+	end
+end
+
+endmodule
+
+
+
+
